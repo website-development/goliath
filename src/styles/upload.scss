@@ -1,0 +1,47 @@
+.drag__drop .upload{
+   
+    margin: 0 auto;
+    font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.02em;
+width: 183px;
+height: 43px;
+color: #FFFFFF;
+span{
+    margin-left: 35px;
+}
+}
+.drag__drop .last{
+    margin-bottom: 50px;
+}
+
+.input{
+    margin: 0 auto;
+    font-family: Crimson Text;
+font-style: normal;
+font-weight: 600;
+font-size: 96px;
+line-height: 140.62%;
+text-align: center;
+letter-spacing: -0.02em;
+border-bottom: 3px solid #E0E0E01A;
+color: #FFFFFF;
+margin-bottom: 50px;
+opacity: 0.1;
+width: 824px;
+}
+
+
+.drag__drop a {
+    text-decoration-line: underline;
+    background: linear-gradient(173.32deg, #fdd226 0%, #ff5753 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: white;
+    text-decoration: none;
+}

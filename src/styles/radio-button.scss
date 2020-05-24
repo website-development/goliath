@@ -1,0 +1,28 @@
+.radio {
+  width: 50%;
+
+  input[value = "0"] + span + span{
+    right: 14px!important;
+    left: 0!important;
+  }
+
+  input[value = "1"] + span + span {
+    right: -3px !important;
+    left: 17px !important;
+  }
+
+  &__title {
+    margin-left: 15px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 148.5%;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+
+    &--disable {
+      color: #FFFFFF33;
+    }
+  }
+}
+

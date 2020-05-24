@@ -1,0 +1,30 @@
+.header {
+  position: relative;
+  z-index: 999;
+  
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.social {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  &__link {
+    margin-left: 20px;
+    cursor: pointer;
+    
+    @media screen and (max-width: 500px) {
+      margin-left: 10px;
+    }
+    
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

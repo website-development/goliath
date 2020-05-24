@@ -1,0 +1,104 @@
+# Basic info of the app
+app:
+  namespace: default
+  name: front-demo-address
+  port: 80
+  readinessProbePath: /
+  livenessProbePath: /
+  # Wait time between healthchecks (seconds)
+  healthPeriod: 30
+  # Initial delay period (seconds) before launching a readiness or liveless probe
+  initialDelay: 45
+  # Wait time between readinessProbe attempts (seconds)
+  healthReadinessPeriod: 25
+  # timeout of the readiness probe (seconds)
+  timeout: 5
+# Number of replicas in the cluster
+replicaCount: 1
+# Parameters for the application Kubernetes service
+# Port will be used to make calls between microservices on Kubernetes
+service:
+  type: ClusterIP
+  port: 80
+
+# Place here you environment vars
+env:
+#- name: SPRING_CONFIG_URI
+#  value: http://config-server:8888        
+#- name: LOGSTASH_URL
+#  value: logstash:5044
+#- name: SPRING_PROFILES_ACTIVE
+#  value: dev          
+# Parameters for the docker image
+image:
+  repository: eu.gcr.io/hocelot-gcloud/front-demo-address
+  pullPolicy: Always
+
+volumes: #|
+#  - name: cloudsql-instance-credentials
+#    secret:
+#      secretName: cloudsql-instance-credentials
+
+volumeMounts: #|
+  #- name: cloudsql-instance-credentials
+  #  mountPath: /secrets/cloudsql
+  #  readOnly: true
+
+# In case you need an ingress resource to expose the app, place its configuration here
+# NOTE: the "enabled" key value must be set to 'true'
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/auth-realm: Authentication Required
+    nginx.ingress.kubernetes.io/auth-secret: front-addr-secret
+    nginx.ingress.kubernetes.io/auth-type: basic
+  hosts:
+    - host: front-demo-address-dev.hocelot.com
+      paths: 
+        - /
+  tls:
+    - secretName: hocelotcert
+      hosts:
+        - front-demo-address-dev.hocelot.com
+
+
+#Extra secrets and parameters should be included here
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+# Specify here the resource limits of your application
+resources:
+  limits:
+    cpu: 300m
+    memory: 512Mi
+  requests:
+    cpu: 200m
+    memory: 512Mi
+
+extraContainers: #|
+  #- name: cloudsql-proxy
+  #  image: gcr.io/cloudsql-docker/gce-proxy:1.11
+  #  command: ["/cloud_sql_proxy",
+  #        "-instances=hocelot-mx:us-central1:keycloak-dev=tcp:5432",
+  #        "-credential_file=/secrets/cloudsql/credentials.json"]
+  #  securityContext:
+  #    runAsUser: 2  # non-root user
+  #    allowPrivilegeEscalation: false
+  #  resources:
+  #   limits:
+  #     cpu: 500m
+  #     memory: 512Mi
+  #   requests:
+  #     cpu: 100m
+  #     memory: 50Mi
+  #  volumeMounts:
+  #    - name: cloudsql-instance-credentials
+  #      mountPath: /secrets/cloudsql
+  #      readOnly: true
+
+nodeSelector: {}
+
+tolerations: []

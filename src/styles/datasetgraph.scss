@@ -1,0 +1,79 @@
+.datasetgraph {
+  text-align: center;
+  box-sizing: border-box;
+  padding: 25px 50px;
+  background: #3321282d;
+  mix-blend-mode: multiply;
+  box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  min-height: 400px;
+  max-width: 368px;
+  margin-left: 43px;
+
+  @media screen and (max-width: 1000px) {
+    margin: auto;
+  }
+
+  &__heading {
+    margin: 0;
+    font-family: Crimson Text;
+    font-size: 27px;
+    line-height: 140.62%;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+  }
+
+  &__subheading {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 190%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 35px;
+  }
+}
+
+.circle_progressCircle__R85wl {
+  position: static !important;
+  // filter: drop-shadow(3px 3px 2px black);
+}
+
+.circle_reactGradientProgressPercentageSpan__37tYu {
+  font-weight: 600;
+}
+
+.donut {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -68%);
+
+  &__number {
+    margin: 0;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 140.62%;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 148.5%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #ffffff33;
+  }
+}

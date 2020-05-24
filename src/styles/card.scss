@@ -1,0 +1,50 @@
+.card {
+  cursor: pointer;
+  width: 193px;
+  height: 272px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  border-radius: 3px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+
+  &:not(:last-of-type) {
+    margin-right: 30px;
+  }
+
+  @media screen and (max-width: 550px) {
+    margin-right: 0;
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  &__bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      103.7deg,
+      rgba(155, 182, 184, 0.6) 0%,
+      rgba(96, 113, 115, 0.6) 95.34%
+    );
+  }
+
+  &__text {
+    margin-left: 0;
+    font-family: Montserrat;
+    font-size: 13px;
+    line-height: 190%;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+  }
+
+  &__icon {
+    margin-right: 7px;
+  }
+}

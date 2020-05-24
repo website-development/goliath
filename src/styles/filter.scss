@@ -1,0 +1,246 @@
+.filter {
+  box-sizing: border-box;
+  min-height: 828px;
+  width: 410px;
+  position: absolute;
+  z-index: 1;
+  top: -143px;
+  background: linear-gradient(98.9deg, #2F3942 0%, #192431 100%);
+  mix-blend-mode: normal;
+  box-shadow: 0px 60px 100px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  left: -200px;
+
+  @media screen and (max-width: 1200px) {
+    top: -343px;
+  }
+
+  @media screen and (max-width: 650px) {
+    left: -150px;
+  }
+
+  &__top {
+    box-sizing: border-box;
+    padding: 15px 23px 19px;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #FFFFFF33;
+
+    & + div {
+      padding-top: 25px;
+    }
+  }
+
+  &__header {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 190%;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    width: max-content;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    padding: 0 40px 44px;
+    position: relative;
+  }
+
+  &__name {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 148.5%;
+    letter-spacing: 0.02em;
+    color: #CBCFD4;
+    opacity: 0.4;
+    margin: 0;
+    width: max-content;
+  }
+
+  &__date {
+    height: 115px;
+    width: 150px;
+    box-sizing: border-box;
+    padding: 16px 17px 12px 13px;
+    border: 1px solid #FFFFFF33;
+    border-radius: 5px;
+    margin-top: 10px;
+
+    &:first-of-type {
+      margin-right: 35px;
+    }
+
+    &-number {
+      font-family: Montserrat;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 140.62%;
+      color: #FFFFFF;
+    }
+
+    &-wrapper {
+      display: flex;
+    }
+  }
+
+  &__input {
+    box-sizing: border-box;
+    padding: 4px 0;
+    margin-top: 6px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #FFFFFF33;
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 148.5%;
+    letter-spacing: 0.02em;
+    color: #CBCFD4;
+    margin-bottom: 10px;
+
+    &::placeholder {
+      opacity: 0.4;
+    }
+  }
+
+  &__image-search {
+    position: absolute;
+    right: 40px;
+    height: 16px;
+    width: 16px;
+    transform: translateY(50%);
+  }
+
+  &__button {
+    background-image: linear-gradient(167.29deg, rgb(253, 210, 38) 0%, rgb(255, 87, 83) 100%);
+    border-radius: 34px;
+    padding: 10px 0;
+    width: 130px;
+    text-align: center;
+    color: white;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 148.5%;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+
+    &--disable {
+      background: transparent;
+      border: 1px solid #FFFFFF33;
+      color: #FFFFFF33;
+    }
+  }
+
+  &__more {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__buttons {
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+
+    button {
+      flex-grow: 0;
+      margin: 0;
+    }
+  }
+
+  &__clear {
+    cursor: pointer;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 148.5%;
+    letter-spacing: 0.02em;
+    color: #FF5753;
+  }
+}
+
+.rdrDateDisplay {
+  display: none!important;
+}
+
+.rdrCalendarWrapper {
+  width: 100% !important;
+  padding-top: 0!important;
+  background-image: linear-gradient(111.46deg, #2F3942, #192431)!important;
+  mix-blend-mode: color-dodge!important;
+  margin-bottom: 10px!important;
+}
+
+.rdrWeekDay {
+  font-family: Montserrat !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 17px !important;
+  text-align: center !important;
+  letter-spacing: 0.02em !important;
+  color: #FFFFFF !important;
+}
+
+.rdrMonth {
+  margin: auto!important;
+}
+
+.rdrDayNumber {
+  font-family: Montserrat!important;
+  font-style: normal!important;
+  font-weight: 600!important;
+  font-size: 11px!important;
+  line-height: 148.5%!important;
+  text-align: center!important;
+  letter-spacing: 0.02em!important;
+  color: #FFFFFF!important;
+  opacity: 0.6!important;
+}
+
+.rdrDayNumber span {
+  color: white!important;
+}
+
+.rdrStartEdge,
+.rdrEndEdge {
+  background: linear-gradient(135deg, #FDD226 0%, #FF5753 100%) !important;
+  opacity: 1!important;
+}
+
+.rdrMonthAndYearPickers select {
+  color: white!important;
+  font-family: Montserrat!important;
+  font-style: normal!important;
+  font-weight: 600!important;
+  font-size: 14px!important;
+  line-height: 17px!important;
+  letter-spacing: 0.02em!important;
+}
+
+.rdrInRange {
+  background: linear-gradient(165deg, #FDD2264d 0%, #FF57534d 100%) !important;
+}

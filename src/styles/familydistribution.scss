@@ -1,0 +1,184 @@
+.familydistribution {
+  box-sizing: border-box;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  padding-right: 40px;
+
+  &__labels {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 15px;
+  }
+
+  &__label {
+    margin: 0;
+    font-family: Montserrat;
+    font-size: 11px;
+    line-height: 148.5%;
+    letter-spacing: 0.02em;
+    color: #ffffff6d;
+    font-weight: 400;
+    line-height: 50px;
+  }
+
+  &__chart {
+    margin-left: 40px;
+    flex-grow: 1;
+  }
+
+  &__row {
+    display: flex;
+    height: 50px;
+    align-items: center;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__graph {
+    height: 6px;
+    width: 10px;
+    background-color: red;
+    border-radius: 25%;
+  }
+
+  &__marker {
+    display: flex;
+    align-items: center;
+    width: 75px;
+    justify-content: flex-end;
+  }
+
+  &__elipse {
+    margin-right: 5px;
+  }
+}
+
+.secondary-colors {
+  margin-left: 10px;
+  justify-content: flex-start;
+  width: 175px;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+$colors: (#263688, #288ee6, #7dd0ff, #7dffe0, #eefff3);
+$colors2: (
+  linear-gradient(252.54deg, #fb3c74 9.22%, #e16971 23.93%),
+  linear-gradient(135deg, #f27495 0%, #7471ff 100%),
+  linear-gradient(45.07deg, #1767ac -28.7%, #8cf4ea 72.22%),
+  linear-gradient(180.24deg, #f6c07e 31.41%, #f9eba1 99.58%),
+  linear-gradient(135deg, #fdd226 0%, #ff5753 100%),
+  linear-gradient(350.14deg, #ddff53 7.4%, #ff5753 92.6%)
+);
+
+@for $i from 1 through 100 {
+  .familydistribution:hover .familydistribution__graph-#{$i} {
+    opacity: 0.3;
+  }
+
+  .familydistribution:hover .familydistribution__graph-#{$i}:hover {
+    opacity: 1;
+
+    &::before,
+    &::after {
+      color: #fff;
+      position: absolute;
+      line-height: 100%;
+      letter-spacing: 0.05em;
+      font-family: Montserrat;
+    }
+
+    &::after {
+      box-sizing: border-box;
+      content: "2 Parents";
+      display: flex;
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 5px;
+      background: linear-gradient(25.4deg, #1767ac -28.7%, #8cf4ea 72.22%);
+      width: 100px;
+      height: 45px;
+      font-weight: 400;
+      font-size: 13px;
+      left: 15%;
+      top: -50px;
+      border-radius: 5px;
+    }
+
+    &::before {
+      z-index: 1;
+      font-weight: 500;
+      font-size: 16px;
+      content: "#{$i}%";
+      position: absolute;
+      top: -27px;
+      left: calc(15% + 50px);
+      transform: translateX(-50%);
+    }
+  }
+
+  .familydistribution__graph-#{$i} {
+    width: percentage($i) / 100;
+    height: 6px;
+    border-radius: 3px;
+    margin-right: 10px;
+    position: relative;
+  }
+
+  .familydistribution__row.vertical {
+    height: 220px;
+
+    .familydistribution__graph-#{$i} {
+      width: 6px;
+      height: percentage($i) / 100;
+      border-radius: 3px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+$j: 1;
+
+@each $color in $colors {
+  .familydistribution__row > div:nth-child(#{$j}) {
+    background-color: $color;
+  }
+
+  .familydistribution__markers
+    > div:nth-child(#{$j})
+    .familydistribution__elipse {
+    background-color: $color;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  $j: $j + 1;
+}
+
+$k: 1;
+
+@each $color in $colors2 {
+  .familydistribution__markers2
+    > div:nth-child(#{$k})
+    .familydistribution__elipse {
+    background: $color;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  $k: $k + 1;
+}

@@ -1,0 +1,116 @@
+.block__text a,
+.drag__drop a {
+  text-decoration-line: underline;
+  background: linear-gradient(173.32deg, #fdd226 0%, #ff5753 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.drag__drop_img {
+  margin-top: 60px;
+}
+.drag__drop {
+  text-align: center;
+}
+
+.drag__drop p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 190%;
+  color: #ffffff;
+
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.dd {
+  font-family: Crimson Text;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 96px;
+  line-height: 140.62%;
+  margin-bottom: 50px;
+
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+}
+.cancel__button {
+  .cancel {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    background: none;
+    color: #ffffff;
+    border: 1px solid #ff5753;
+    box-sizing: border-box;
+    border-radius: 34px;
+    margin: 0 auto;
+  }
+}
+
+.block__text {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+  height: 131px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 190%;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+.textblock {
+  width: 326px;
+}
+.first {
+  position: relative;
+  img {
+    position: absolute;
+    left: -40px;
+    top: 25px;
+  }
+  .simg {
+    position: absolute;
+    left: -40px;
+    top: 90px;
+  }
+}
+.second {
+  position: relative;
+  img {
+    position: absolute;
+    left: -40px;
+    top: 25px;
+  }
+  .simg {
+    position: absolute;
+    left: -40px;
+    top: 90px;
+  }
+}
+
+.dataset {
+  font-family: Crimson Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 48px;
+  line-height: 140.62%;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 100px;
+}

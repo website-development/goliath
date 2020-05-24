@@ -1,0 +1,107 @@
+.shorttable {
+  max-width: 700px;
+  min-height: 400px;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  padding-bottom: 0;
+  background: #3321282d;
+  mix-blend-mode: multiply;
+  box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 190%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+
+  @media screen and (max-width: 1000px) {
+    margin-bottom: 20px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+  }
+
+  &__heading {
+    font-family: montserrat;
+    font-size: 13px;
+    line-height: 140.62%;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    cursor: pointer;
+    width: 138px;
+    padding: 10px 15px;
+    background: linear-gradient(167.74deg, #fdd226 0%, #ff5753 100%);
+    mix-blend-mode: normal;
+    border-radius: 34px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 148.5%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    border: none;
+  }
+
+  &__middle {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+
+    tr {
+      border-top: 1px solid #e0e0e01a;
+      border-bottom: 1px solid #e0e0e01a;
+      height: 77px;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    td {
+      div {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        padding-left: 14px;
+      }
+
+      img {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &__bottom {
+    color: white;
+    cursor: pointer;
+    opacity: 0.5;
+    font-family: Montserrat;
+    height: 74px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 190%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.1em;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

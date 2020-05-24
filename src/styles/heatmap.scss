@@ -1,0 +1,127 @@
+.heatmap {
+  height: calc(50% - 5px);
+  width: calc(50% - 5px);
+
+  margin-bottom: 10px;
+
+  $heatmapdata: 21, 75, 5, 21;
+
+  &:nth-child(odd) {
+    margin-right: 10px;
+  }
+
+  $i: 1;
+  @each $data in $heatmapdata {
+    &:nth-child(#{$i}) {
+      $opacity: ($data / 100) + 0.2;
+      position: relative;
+      background-color: rgba(255, 87, 83, $opacity);
+    }
+
+    &:nth-child(#{$i}):before {
+      content: "#{$data}";
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 600;
+      font-size: 14px;
+      font-family: "Montserrat";
+    }
+
+    $i: $i + 1;
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+    transform: rotate(-90deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: -60px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+    margin: auto;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 190%;
+    letter-spacing: 0.05em;
+    color: #ffffffcc;
+  }
+
+  &__choice {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 190%;
+    letter-spacing: 0.05em;
+    color: #ffffff4d;
+  }
+
+  &__legend {
+    margin-top: 25px;
+    position: relative;
+    width: 100%;
+    height: 12px;
+    background: linear-gradient(to right, transparent, #ff5753);
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 20px;
+      width: 2px;
+      background: #fff;
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
+  }
+
+  &__labels {
+    width: calc(100% + 4px);
+    display: flex;
+    justify-content: space-between;
+    transform: translate(-2px, 20px);
+    span {
+      color: #ffffff4d;
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 190%;
+      letter-spacing: 0.05em;
+      font-family: Montserrat;
+    }
+  }
+}

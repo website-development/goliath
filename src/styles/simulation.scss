@@ -1,0 +1,149 @@
+.simulation {
+  background: linear-gradient(119.36deg, #2f3942 0%, #192431 100%);
+  padding-bottom: 20px;
+
+  &__container {
+    box-sizing: border-box;
+    display: flex;
+    padding: 0 25px;
+  }
+
+  &__box {
+    width: 1035px;
+    height: 228px;
+    border: 1px solid #ffffff1a;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 30px 15px 20px;
+    position: relative;
+    // overflow: auto;
+  }
+
+  &__graph {
+    display: flex;
+    margin-top: 60px;
+    width: 950px;
+    height: 20px;
+    background-color: #eeeeee1a;
+    border-radius: 10px;
+
+    $numbers: "-6.119", "-4.93", "-4.119", "-2.119", "-0.1191", "1.881", "3.881",
+      "5.881";
+
+    & > div {
+      position: relative;
+      flex-grow: 1;
+    }
+
+    & > div::after {
+      content: " ";
+      display: block;
+      height: 35px;
+      width: 1px;
+      background-color: #eeeeee1a;
+      transform: translateY(-10px);
+    }
+
+    & > div:hover::before {
+      cursor: pointer;
+      color: white !important;
+    }
+
+    $i: 1;
+
+    @each $num in $numbers {
+      & > div:nth-child(#{$i})::before {
+        content: "#{$num}";
+        position: absolute;
+        top: -20px;
+        right: -24px;
+        color: #eeeeee33;
+        font-family: Montserrat;
+        font-size: 8px;
+        line-height: 190%;
+        letter-spacing: 0.05em;
+      }
+
+      $i: $i + 1;
+    }
+
+    & > div:first-child::after {
+      content: "";
+      display: none;
+    }
+
+    & > div:last-child::before {
+      content: "";
+    }
+  }
+
+  &__red {
+    background: linear-gradient(#ff5753, rgba(255, 87, 83, 0.8));
+    width: 45px;
+    border-radius: 10px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+  }
+
+  &__dark-blue {
+    height: 100%;
+    width: 140px;
+    background-color: #1767ac;
+    position: absolute;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  &__blue {
+    height: 100%;
+    width: 80px;
+    background-color: #3085b9;
+    position: absolute;
+    right: -8px;
+  }
+
+  &__light-blue {
+    height: 100%;
+    width: 75px;
+    background-color: #5bb8d0;
+    position: absolute;
+    left: 8px;
+  }
+
+  &__aqua-blue {
+    background-color: #71d4dc;
+    height: 100%;
+    width: 34px;
+    position: absolute;
+    right: -12px;
+  }
+
+  &__aqua {
+    background-color: #7fe8e2;
+    height: 100%;
+    width: 10px;
+    position: absolute;
+    left: 12px;
+  }
+
+  &__light-aqua {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #aefff7;
+    height: 100%;
+    width: 10px;
+    position: absolute;
+    left: 22px;
+  }
+
+  &__label {
+    font-family: Montserrat;
+    font-size: 11px;
+    line-height: 148.5%;
+    color: #eeeeee4d;
+    margin: 0;
+    margin-left: 10px;
+    font-weight: 500;
+  }
+}
